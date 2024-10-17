@@ -8,17 +8,52 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let people = ["Finn", "Leia", "Luke", "Rey"]
+    
     var body: some View {
-        List{
-            Section("Home"){
-                ForEach(0..<5) { _ in
-                    Text("Hello word")
-                }
+        
+        List(people, id: \.self){
+            Text($0)
+        }
+        
+        .onAppear{
+            testBundles()
+            testString()
+        }
+    }
+    
+    func testBundles() {
+        if let fileURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
+
+            if let fileContent = try? String(
+                contentsOf: fileURL,
+                encoding: .ascii
+            ) {
+//                print(fileContent.components(separatedBy: "\n"))
             }
             
-            Text("Remeber")
         }
-        .listStyle(.grouped)
+    }
+    
+    func testString() {
+        let word = "da"
+        
+        let checker = UITextChecker()
+        let range = NSRange(location: 0, length: word.utf16.count)
+                        
+        let misspelledRange = checker
+            .rangeOfMisspelledWord(
+                in: word,
+                range: range,
+                startingAt: 0,
+                wrap: false,
+                language: "es"
+            )
+        
+        let allGood = misspelledRange.location == NSNotFound
+        
+        print(allGood)
     }
 }
 
