@@ -30,7 +30,7 @@ struct ContentView: View {
                 contentsOf: fileURL,
                 encoding: .ascii
             ) {
-//                print(fileContent.components(separatedBy: "\n"))
+                print(fileContent.components(separatedBy: "\n").randomElement())
             }
             
         }
