@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1B69D53C2CC20F940099D737 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B69D53B2CC20F940099D737 /* README.md */; };
+		1B69D53E2CC20FE80099D737 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B69D53D2CC20FE80099D737 /* img.png */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		1B31F5F12CBF3E5F001846A1 /* Project-5-SwiftUI-word-scramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-5-SwiftUI-word-scramble.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B31F5F12CBF3E5F001846A1 /* Project-5-SwiftUI-word-scramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Project-5-SwiftUI-word-scramble.app"; path = "/Users/kevincuadros/Documents/SwiftUI/Project-5-SwiftUI-word-scramble/build/Debug-iphoneos/Project-5-SwiftUI-word-scramble.app"; sourceTree = "<absolute>"; };
+		1B69D53B2CC20F940099D737 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1B69D53D2CC20FE80099D737 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,17 +39,10 @@
 		1B31F5E82CBF3E5F001846A1 = {
 			isa = PBXGroup;
 			children = (
+				1B69D53B2CC20F940099D737 /* README.md */,
+				1B69D53D2CC20FE80099D737 /* img.png */,
 				1B31F5F32CBF3E5F001846A1 /* Project-5-SwiftUI-word-scramble */,
-				1B31F5F22CBF3E5F001846A1 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		1B31F5F22CBF3E5F001846A1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1B31F5F12CBF3E5F001846A1 /* Project-5-SwiftUI-word-scramble.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +95,7 @@
 			mainGroup = 1B31F5E82CBF3E5F001846A1;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 1B31F5F22CBF3E5F001846A1 /* Products */;
+			productRefGroup = 1B31F5E82CBF3E5F001846A1;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -109,6 +109,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B69D53E2CC20FE80099D737 /* img.png in Resources */,
+				1B69D53C2CC20F940099D737 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
