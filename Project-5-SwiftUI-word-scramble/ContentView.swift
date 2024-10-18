@@ -37,9 +37,14 @@ struct ContentView: View {
                 }
                 
             }
+            
             .navigationTitle(rootWord)
             .onSubmit(addNewWord)
             .onAppear(perform: startGame)
+            
+            .toolbar {
+                Button("New Game", action: startGame)
+            }
             
             .alert(errorTitle, isPresented: $showingError) {}
                 message: {
