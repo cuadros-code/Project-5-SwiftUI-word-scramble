@@ -55,6 +55,14 @@ struct ContentView: View {
         )
         guard answer.count > 0 else { return }
         
+        guard isDifferent(word: answer) else {
+            wordError(
+                title: "Use a different word",
+                message: "Make sure the word is different from the original"
+            )
+            return
+        }
+        
         guard isOriginal(word: answer) else {
             wordError(title: "Word used already", message: "Be more original!")
             return
@@ -132,6 +140,13 @@ struct ContentView: View {
         errorTitle = title
         errorMessage = message
         showingError = true
+    }
+    
+    func isDifferent(word: String) -> Bool {
+        if word.count < 3 || word == rootWord {
+            return false
+        }
+        return true
     }
      
     
