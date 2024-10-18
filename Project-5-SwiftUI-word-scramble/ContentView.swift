@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    
     var body: some View {
         NavigationStack {
             
@@ -43,7 +45,12 @@ struct ContentView: View {
             .onAppear(perform: startGame)
             
             .toolbar {
-                Button("New Game", action: startGame)
+                ToolbarItem(placement: .principal){
+                    Text("Score \(score)")
+                }
+                ToolbarItem {
+                    Button("New Game", action: startGame)
+                }
             }
             
             .alert(errorTitle, isPresented: $showingError) {}
@@ -88,11 +95,13 @@ struct ContentView: View {
         
         withAnimation {
             usedWords.insert(answer, at: 0)
+            score += 1
         }
         newWord = ""
     }
     
     func startGame() {
+        score = 0
         if let fileUrl = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let fileContent = try? String(
                 contentsOf: fileUrl,
