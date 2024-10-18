@@ -68,6 +68,41 @@ struct ContentView: View {
         fatalError("Could not load file")
     }
     
+    func isOriginal(word: String) -> Bool {
+        return !usedWords.contains(word)
+    }
+    
+    func isPosible(word: String) -> Bool {
+        
+        var tempWord = rootWord
+        
+        for letter in word {
+            if let position = tempWord.firstIndex(of: letter) {
+                tempWord.remove(at: position)
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func isReal(word: String) -> Bool {
+        let textChecker = UITextChecker()
+        let range = NSRange(location: 0, length: word.utf16.count)
+        
+        let isReal = textChecker
+            .rangeOfMisspelledWord(
+                in: word,
+                range: range,
+                startingAt: 0,
+                wrap: false,
+                language: "en"
+            )
+        
+        return isReal.location == NSNotFound
+    }
+     
+    
 }
 
 #Preview {
